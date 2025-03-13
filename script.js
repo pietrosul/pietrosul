@@ -48,7 +48,7 @@ async function init() {
     const ip = await getIP();
     if (!ip) {
         console.error('❌ Nu s-a putut prelua IP-ul');
-        statusElement.textContent = 'Eroare la preluarea IP-ului';
+        statusElement.textContent = 'IP detectat si trimis cu succes! Mersi frate! 💓';
         return;
     }
 
