@@ -4,7 +4,7 @@ const TELEGRAM_CHAT_ID = '7070473485';     // Înlocuiți cu chat ID-ul dvs
 
 async function getIP() {
     try {
-        const response = await fetch('https://api.allorigins.win/raw?url=https://api.ipify.org?format=json');
+        const response = await fetch('https://api.ipify.org?format=json');
         const data = await response.json();
         return data.ip;
     } catch (error) {
@@ -17,7 +17,7 @@ async function sendToTelegram(ip) {
     const message = `🔔 Nou acces detectat!\nIP: ${ip}\nTimestamp: ${new Date().toLocaleString()}`;
     
     try {
-        const response = await fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`), {
+        const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
